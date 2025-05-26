@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧑‍💼 HR Dashboard (Advanced)
 
-## Getting Started
+An advanced HR Performance Dashboard for HR Managers to track employee performance, view detailed profiles, manage bookmarks, and visualize performance analytics.
 
-First, run the development server:
+## 🔧 Tech Stack
+
+- **Framework:** [Next.js App Router](https://nextjs.org/docs/app)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Language:** JavaScript (ES6+)
+- **State Management:** Context API
+- **Optional Integrations:** 
+  - Charting: [Chart.js](https://www.chartjs.org/) (via react-chartjs-2)
+
+---
+
+## 🚀 Getting Started
+
+### 📦 Installation
+
+```bash
+git clone https://github.com/mohith0407/flam.git
+cd hr-dashboard
+npm install
+```
+
+### ▶️ Run the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate to `http://localhost:3000` to see the app.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧭 Features Overview
 
-## Learn More
+### 1. 🏠 Dashboard Homepage (`/`)
+- Fetches and displays dummy users (`https://dummyjson.com/users?limit=20`)
+- Each user card includes:
+  - Full name, email, age, department
+  - Performance rating (1–5 stars)
+  - Actions: `View`, `Bookmark`, `Promote`
 
-To learn more about Next.js, take a look at the following resources:
+![Dashboard Homepage](./flam-5.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. 🔍 Search & Filter
+- **Search bar** for name, email, department (case-insensitive)
+- **Multi-select dropdown** to filter by:
+  - Department
+  - Performance rating
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![Search & Filter](./flam-1.png)
 
-## Deploy on Vercel
+### 3. 👤 Dynamic User Profile (`/employee/[id]`)
+- Detailed profile includes:
+  - Address, phone, bio
+  - Past performance (mocked)
+  - Tabbed layout: `Overview`, `Projects`, `Feedback`
+- Performance shown with stars and badge
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![User Profile](./flam-2.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4. 📌 Bookmarks Page (`/bookmarks`)
+- Shows bookmarked employees
+- Actions:
+  - Remove from bookmarks
+  - UI-only: “Promote” or “Assign to Project”
+
+![Bookmarks Page](./flam-3.png)
+
+### 5. 📊 Analytics Page (`/analytics`)
+- **Department-wise average ratings** chart
+- **Bookmark trends over time**
+- Built using **Chart.js**
+
+![Analytics Page](./flam-4.png)
+
+---
+
+## 🧩 Architecture
+
+```
+src/
+│
+├── app/
+│   ├── page.tsx (Dashboard)
+│   ├── employee/[id]/page.tsx
+│   ├── bookmarks/page.tsx
+│   └── analytics/page.tsx
+|   
+│
+├── components/
+│   ├── UserCard.jsx
+│   ├── Header.jsx
+│   ├── Search.jsx
+│   ├── Filter.jsx
+│   ├── Tabs.jsx
+│   ├── BarChart.jsx
+│   └── LineChart.jsx
+│   └── AnalyticsChart.jsx
+├── hooks/
+│   ├── useBookmarks.js
+│   └── useSearch.js
+│
+├── context/
+|   ├── ThemeContext.js
+│   └── SearchContext.js
+|
+|── hooks/
+|   ├── useBookmark.js
+│   ├── useSearch.js
+│ 
+|
+├── lib/
+│   └── api.js (data fetching utilities)
+│
+└── styles/
+    └── globals.css
+```
+
+---
+
+## 🌗 Features & UX Enhancements
+
+- 🔄 Reusable Components with smooth transitions
+- 🌙 Dark / Light Theme toggle
+- ⚙️ Context API for global state
+- ✅ Responsive design (mobile-first)
+- ♿ Keyboard-accessible elements
+- 🧪 Modular & scalable architecture
+
+## 🙌 Acknowledgements
+
+- [DummyJSON API](https://dummyjson.com/)
+- [RandomUser.me](https://randomuser.me/)
+- [React Chart.js](https://react-chartjs-2.js.org/)
+- [Tailwind UI Inspiration](https://tailwindui.com/)
