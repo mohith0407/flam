@@ -42,7 +42,7 @@ Navigate to `http://localhost:3000` to see the app.
   - Performance rating (1–5 stars)
   - Actions: `View`, `Bookmark`, `Promote`
 
-![Dashboard Homepage](./flam-5.png)
+![Dashboard Homepage](./flam-1.png)
 
 ### 2. 🔍 Search & Filter
 - **Search bar** for name, email, department (case-insensitive)
@@ -50,7 +50,7 @@ Navigate to `http://localhost:3000` to see the app.
   - Department
   - Performance rating
 
-![Search & Filter](./flam-1.png)
+![Search & Filter](./flam-2.png)
 
 ### 3. 👤 Dynamic User Profile (`/employee/[id]`)
 - Detailed profile includes:
@@ -59,7 +59,7 @@ Navigate to `http://localhost:3000` to see the app.
   - Tabbed layout: `Overview`, `Projects`, `Feedback`
 - Performance shown with stars and badge
 
-![User Profile](./flam-2.png)
+![User Profile](./flam-4.png)
 
 ### 4. 📌 Bookmarks Page (`/bookmarks`)
 - Shows bookmarked employees
@@ -74,7 +74,7 @@ Navigate to `http://localhost:3000` to see the app.
 - **Bookmark trends over time**
 - Built using **Chart.js**
 
-![Analytics Page](./flam-4.png)
+![Analytics Page](./flam-5.png)
 
 ---
 
