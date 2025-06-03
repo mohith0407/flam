@@ -8,6 +8,7 @@ import { useSearchFilter } from "@/hooks/useSearchFilter";
 import {fetchUsers} from "@/lib/api";
 export default function HomePage() {
   const [users, setUsers] = useState([]);
+  const [isSearchActive, setIsSearchActive] = useState(false);
   const {
     searchTerm,
     setSearchTerm,
@@ -30,14 +31,14 @@ export default function HomePage() {
 
   return (
     <div className="space-y-6">
-      <Search value={searchTerm} onChange={setSearchTerm} />
-      <Filter
+      <Search value={searchTerm} onChange={setSearchTerm} isActive={isSearchActive} setIsActive={setIsSearchActive} />
+      {isSearchActive &&  <Filter
         departments={departments}
         selectedDepartments={selectedDepartments}
         setSelectedDepartments={setSelectedDepartments}
         selectedRatings={selectedRatings}
         setSelectedRatings={setSelectedRatings}
-      />
+      />}
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredUsers.map((user) => (

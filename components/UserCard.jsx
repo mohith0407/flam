@@ -146,7 +146,7 @@ export default function UserCard({ user }) {
       </header>
 
       {/* Rating stars */}
-      <div className="flex gap-1 mt-2 text-yellow-500 text-lg">
+      <div className="flex gap-1 mt text-yellow-500 text-2xl">
         {[...Array(5)].map((_, i) => (
           <span key={i}>{i < rating ? "★" : "☆"}</span>
         ))}
@@ -178,7 +178,7 @@ export default function UserCard({ user }) {
 
         <button
           type="button"
-          className="px-3 py-1 bg-green-600 text-white rounded text-sm font-medium hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="px-3 py-1 cursor-pointer bg-blue-600 text-white rounded text-sm font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           onClick={() => alert(`Promote action triggered for ${user.firstName} ${user.lastName}`)}
           aria-label={`Promote ${user.firstName} ${user.lastName}`}
         >
